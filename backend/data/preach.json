@@ -1,0 +1,39 @@
+[
+    {
+        "views": 75,
+        "likes": 20,
+        "nbrOfReviews": 10,
+        "theme": "Notre Héritage.",
+        "subTheme": "Notre Canaan, notre destination promise",
+        "image": {
+            "public_id": "preach/uhdhkjkuebeu",
+            "url": "https//res.cloudinary.com/msobenin/images/upload/v1155889/preachs/jkuoioehooef.jpg"
+        },
+        "content": {
+            "public_id": "preach/uhdhkjkuebeu",
+            "url": "https//res.cloudinary.com/msobenin/contents/upload/v1155889/preachs/jkuoioehooef.jpg"
+        },
+        "category": "Videos",
+        "author": "Pst Norbert BAMBELOU",
+        "reviews": [
+            {
+            "like": true,
+            "name": "John Doe",
+            "comment": "Ohh super preach!! God Bless you!!"
+            },
+            {
+            "like": true,
+            "name": "Jean Matthieu",
+            "comment": "Ohh super preach!! God Bless you!!"
+            },
+            {
+            "like": true,
+            "name": "Eglise de Galate",
+            "comment": "Ohh super preach!! God Bless you!!"
+            }
+        ],
+        "createdAt": {
+            "date": "2021-11-15T11:22:41.565Z"
+        }
+    }
+]

@@ -1,0 +1,54 @@
+
+preach:
+ -id
+ -theme
+ -subTheme
+ -author
+ -type
+ -publishedAt
+ -views
+ -likes
+ -createdAt
+ -comments
+
+type { vidéo, pdf, audio, podcast... }
+
+abonner:
+ -id
+ -name
+ -email
+
+comment:
+ -id
+ -content
+ -author
+
+news:
+ -id
+ -image
+ -content
+ -publisedAt
+ -createdAt
+
+user:
+ -id
+ -name
+ -email
+ -password
+ -number
+ -role
+ -createdAt
+
+advertisement:
+ -id
+ -preachId
+ -createdAt
+
+Tabernacle:
+ -id
+ -member
+ -pastor
+ -anciens
+ -region
+ -createdAt
+ 
