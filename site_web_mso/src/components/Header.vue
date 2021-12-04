@@ -15,7 +15,10 @@
           <p class="text-left">La parole parlée est la semence originelle</p>
         </figcaption>
       </div>
-      <div class="devise">
+      <div class="bouton-bar" id="bouton-bars" @click="displayMenu">
+        <span><i class="fas fa-bars"></i></span>
+      </div>
+      <div class="devise" id="devise">
         <p class="font-weight-bold m-0">
           Pareil à l'aigle qui éveille sa couvée...
         </p>
@@ -30,25 +33,28 @@
         </p>
       </div>
     </div>
-    <nav>
+    <nav id="general-menu">
+      <span class="text-danger close-button" id="close-menu" @click="hideMenu"
+        ><i class="fas fa-times"></i
+      ></span>
       <ul id="menu">
         <li class="sous-menu current-sous-menu">
-          <router-link to="/"><span>Accueil</span></router-link>
+          <b-link href="/"><span>Accueil</span></b-link>
         </li>
         <li class="sous-menu">
-          <router-link to=""><span>Tabernacles</span></router-link>
+          <b-link href="/tabernacles"><span>Tabernacles</span></b-link>
         </li>
         <li class="sous-menu">
-          <router-link to=""><span>Prédications</span></router-link>
+          <b-link href="/predications"><span>Prédications</span></b-link>
         </li>
         <li class="sous-menu">
-          <router-link to=""><span>Actualités</span></router-link>
+          <b-link href="/actualites"><span>Actualités</span></b-link>
         </li>
         <li class="sous-menu">
-          <router-link to=""><span>Images</span></router-link>
+          <b-link href="/galeries"><span>Images</span></b-link>
         </li>
         <li class="sous-menu">
-          <router-link to=""><span>Forum</span></router-link>
+          <b-link href="/forum"><span>Forum</span></b-link>
         </li>
         <li id="search-menu">
           <input type="search" name="search" id="search" />
@@ -67,9 +73,20 @@ export default {
   data() {
     return {};
   },
+
+  methods: {
+    displayMenu() {
+      $("#general-menu").toggle();
+    },
+
+    hideMenu() {
+      $("#general-menu").hide();
+    },
+  },
+
   created() {
     $(function () {
-      $("#menu li ")
+      $("#menu li a")
         .filter(function () {
           return this.href == location.href;
         })
@@ -90,6 +107,139 @@ export default {
 </script>
 
 <style scoped>
+@media screen and (max-width: 768px) {
+  /* * {
+    padding: 0px !important;
+    margin: 0px !important;
+  } */
+  .close-button i {
+    background: #e6e6e6;
+    padding: 0.5rem;
+    /* border-radius: 50%; */
+    font-size: 25px;
+  }
+  .close-button {
+    display: block !important;
+    right: 0px;
+    position: absolute;
+  }
+  #devise {
+    display: none;
+  }
+  #bouton-bars {
+    position: absolute;
+    font-size: 35px;
+    cursor: pointer;
+    color: white;
+    right: 5px;
+    display: block;
+    /* background: red; */
+  }
+  #header {
+    display: block;
+    user-select: none;
+    height: 100px !important;
+    width: 100%;
+    border: 1px solid white;
+    background-color: #250030;
+    position: fixed !important;
+    z-index: 200;
+    margin: 0px !important  ;
+    /* margin-top: 0px !important; */
+    padding: 0px !important;
+    /* margin-bottom: 100px !important; */
+  }
+
+  .surnav {
+    height: 100%;
+    color: white;
+    width: 100% !important;
+    position: absolute;
+    display: block;
+    /* border: 1px solid rgb(0, 247, 255); */
+    margin: 10px auto !important;
+  }
+
+  .logo {
+    /* border: 1px solid rgb(0, 255, 55); */
+    width: 100%;
+    margin: 0px !important;
+    padding: 0px !important;
+    position: absolute;
+  }
+
+  .logo figcaption {
+    position: relative;
+    margin: 0px !important;
+  }
+
+  .logo figcaption p:last-child {
+    font-size: small;
+  }
+
+  .logo img {
+    clear: left;
+    width: 75px;
+    height: 75px;
+  }
+
+  /* **********nav styles*********************************************************** */
+  nav {
+    position: fixed !important;
+    z-index: 999;
+    width: 80% !important;
+    height: 100vh !important;
+    margin-left: 0px auto !important;
+    padding: 0px !important;
+    /* border: 1px solid green; */
+    background: #250030;
+    transition: all 1s;
+    display: none;
+  }
+
+  #menu {
+    width: 100% !important;
+    position: relative !important;
+    height: 80% !important;
+    flex-direction: column;
+    /* border: 1px solid orangered; */
+    text-align: left !important;
+    margin-top: 50px;
+    padding: 0px;
+  }
+  .sous-menu span {
+    text-align: center;
+    /* border: 1px solid green; */
+    display: inline-block !important;
+    margin-top: 25px !important;
+    font-weight: 200;
+  }
+  #menu li {
+    height: 50px !important;
+    position: relative !important;
+    text-align: left !important;
+    /* border: 1px solid rgb(251, 255, 0); */
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    flex: none;
+  }
+
+  #search-menu {
+    display: none !important;
+  }
+
+  .sous-menu span {
+    margin-left: 1rem !important;
+  }
+}
+
+/* ***************************************************************************** */
+
+.bouton-bar,
+.close-button {
+  display: none;
+}
 .mso-name {
 }
 #header {
@@ -100,7 +250,11 @@ export default {
 
 .current-sous-menu a {
   background-color: #f8a601 !important;
+}
+
+.current-sous-menu span {
   color: #250030 !important;
+  font-weight: bold !important;
 }
 
 .surnav {

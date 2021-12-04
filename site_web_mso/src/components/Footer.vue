@@ -14,15 +14,15 @@
             <div class="ul-contact">
               <p>
                 <span class="font-weight-bold"
-                  ><i class="fas fa-phone mr-3"></i>+229 97 58 10 88</span
+                  ><i class="fas fa-phone-alt mr-3"></i>+229 97 58 10 88</span
                 >
               </p>
               <p>
-                <span><i class="fas fa-voicemail mr-3"></i>mso@gmail.com</span>
+                <span><i class="fas fa-envelope mr-3"></i>mso@gmail.com</span>
               </p>
               <p>
                 <span
-                  ><i class="fas fa-globe mr-3"></i>06 BP 2021
+                  ><i class="fas fa-map-marker-alt mr-3"></i>06 BP 2021
                   Cotonou,Bénin</span
                 >
               </p>
@@ -49,26 +49,26 @@
         </div>
         <div class="col-md-2 lien-footer">
           <p>Liens utiles</p>
-          <ul class="ul-lien">
-            <li class="sous-lien">
+          <div class="ul-lien">
+            <span class="sous-lien">
               <b-link class="b-link" href="/">Accueil</b-link>
-            </li>
-            <li class="sous-lien">
-              <b-link class="b-link" href="">Tabernacles</b-link>
-            </li>
-            <li class="sous-lien">
-              <b-link class="b-link" href="">Prédications</b-link>
-            </li>
-            <li class="sous-lien">
-              <b-link class="b-link" href="">Actualités</b-link>
-            </li>
-            <li class="sous-lien">
-              <b-link class="b-link" href="">Images</b-link>
-            </li>
-            <li class="sous-lien">
-              <b-link class="b-link" href="">Forum</b-link>
-            </li>
-          </ul>
+            </span>
+            <span class="sous-lien">
+              <b-link class="b-link" href="/tabernacles">Tabernacles</b-link>
+            </span>
+            <span class="sous-lien">
+              <b-link class="b-link" href="/predications">Prédications</b-link>
+            </span>
+            <span class="sous-lien">
+              <b-link class="b-link" href="/actualites">Actualités</b-link>
+            </span>
+            <span class="sous-lien">
+              <b-link class="b-link" href="/galeries">Images</b-link>
+            </span>
+            <span class="sous-lien">
+              <b-link class="b-link" href="/forum">Forum</b-link>
+            </span>
+          </div>
         </div>
         <div class="col-md-4 abonne-footer">
           <form class="abonne-form">
@@ -117,10 +117,10 @@
 export default {};
 </script>
 <style>
-* {
+/* * {
   margin: 0px;
   padding: 0px;
-}
+} */
 
 li {
   list-style-type: none;
@@ -260,18 +260,21 @@ a {
 .ul-lien {
   /* border: 1px solid yellow; */
   /* color: #6d6d6d; */
+  text-align: center;
 }
 
-.ul-lien li {
+.ul-lien span {
   text-align: left;
   margin-bottom: 1.2rem;
   font-size: 20px;
+  display: block;
 }
 
 .lien-footer p {
   color: #f8a601;
   font-weight: bold;
   font-size: 20px;
+  /* text-align: left; */
 }
 
 .abonne-footer {
@@ -339,5 +342,24 @@ a {
 .div-input {
   /* border: 1px solid blueviolet; */
   text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .footer-content > div {
+    margin: 1rem 0rem;
+  }
+  #footer {
+    /* display: none; */
+  }
+
+  .footer-foot p {
+    font-size: small;
+  }
 }
 </style>
