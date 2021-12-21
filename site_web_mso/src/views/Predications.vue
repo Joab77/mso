@@ -4,8 +4,9 @@
     <div class="main">
       <div class="search-predication-div">
         <input
-          type="search"
+          type="text"
           name="search-predication"
+          v-model="search_predication"
           id="search-predication"
           placeholder="Rechercher une prédication"
         /><span><i class="fas fa-search"></i></span>
@@ -55,7 +56,7 @@
       <section class="predication-section">
         <div class="row predication-ligne">
           <div
-            v-for="predication in predications"
+            v-for="predication in filteredPredications"
             :key="predication.id"
             class="predication-block col-md-4"
           >
@@ -104,80 +105,81 @@ export default {
 
   data() {
     return {
+      search_predication:"",
       predications: [
         {
           id: 1,
-          theme: "Linfluence de notre comportement",
+          theme: "L'influence de notre comportement",
           publishedAt: "04/11/2021 à 15:00",
           pasteur: "Norbert BAMBELOU",
           video: require("@/assets/img/images_actualites/image1.png"),
         },
         {
           id: 2,
-          theme: "Linfluence de notre comportement",
+          theme: "L'influence de notre comportement",
           publishedAt: "04/11/2021 à 15:00",
           pasteur: "Norbert BAMBELOU",
           video: require("@/assets/img/images_actualites/image2.png"),
         },
         {
           id: 3,
-          theme: "Linfluence de notre comportement",
+          theme: "L'influence de notre comportement",
           publishedAt: "04/11/2021 à 15:00",
           pasteur: "Norbert BAMBELOU",
           video: require("@/assets/img/images_actualites/image3.png"),
         },
         {
           id: 4,
-          theme: "Linfluence de notre comportement",
+          theme: "L'influence de notre comportement",
           publishedAt: "04/11/2021 à 15:00",
           pasteur: "Norbert BAMBELOU",
           video: require("@/assets/img/images_actualites/image4.png"),
         },
         {
           id: 5,
-          theme: "Linfluence de notre comportement",
+          theme: "L'influence de notre comportement",
           publishedAt: "04/11/2021 à 15:00",
           pasteur: "Norbert BAMBELOU",
           video: require("@/assets/img/images_actualites/image1.png"),
         },
         {
           id: 6,
-          theme: "Linfluence de notre comportement",
+          theme: "L'influence de notre comportement",
           publishedAt: "04/11/2021 à 15:00",
           pasteur: "Norbert BAMBELOU",
           video: require("@/assets/img/images_actualites/image2.png"),
         },
         {
           id: 7,
-          theme: "Linfluence de notre comportement",
+          theme: "Le baptème du Saint-Esprit",
           publishedAt: "04/11/2021 à 15:00",
           pasteur: "Norbert BAMBELOU",
           video: require("@/assets/img/images_actualites/image3.png"),
         },
         {
           id: 8,
-          theme: "Linfluence de notre comportement",
+          theme: "L'influence de notre comportement",
           publishedAt: "04/11/2021 à 15:00",
           pasteur: "Norbert BAMBELOU",
           video: require("@/assets/img/images_actualites/image4.png"),
         },
         {
           id: 10,
-          theme: "Linfluence de notre comportement",
+          theme: "La nouvelle naissance",
           publishedAt: "04/11/2021 à 15:00",
           pasteur: "Norbert BAMBELOU",
           video: require("@/assets/img/images_actualites/image1.png"),
         },
         {
           id: 11,
-          theme: "Linfluence de notre comportement",
+          theme: "L'influence de notre comportement",
           publishedAt: "04/11/2021 à 15:00",
           pasteur: "Norbert BAMBELOU",
           video: require("@/assets/img/images_actualites/image2.png"),
         },
         {
           id: 12,
-          theme: "Linfluence de notre comportement",
+          theme: "L'influence de notre comportement",
           publishedAt: "04/11/2021 à 15:00",
           pasteur: "Norbert BAMBELOU",
           video: require("@/assets/img/images_actualites/image3.png"),
@@ -185,7 +187,7 @@ export default {
 
         {
           id: 13,
-          theme: "Linfluence de notre comportement",
+          theme: "La divinité de Jesus-christ",
           publishedAt: "04/11/2021 à 15:00",
           pasteur: "Norbert BAMBELOU",
           video: require("@/assets/img/images_actualites/image4.png"),
@@ -213,6 +215,14 @@ export default {
       });
     });
   },
+
+  computed:{
+    filteredPredications(){
+      return this.predications.filter((predication)=>{
+        return predication.theme.match(this.search_predication);
+      })
+    }
+  }
 };
 </script>
 

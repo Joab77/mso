@@ -4,7 +4,8 @@
     <div class="main">
       <div class="search-tabernacle-div">
         <input
-          type="search"
+          type="text"
+          v-model="search_tabernacle"
           name="search-tabernacle"
           id="search-tabernacle"
           placeholder="Rechercher un tabernacle"
@@ -13,7 +14,7 @@
 
       <section class="alltabernacle">
         <div
-          v-for="tabernacle in allTabernacle"
+          v-for="tabernacle in filteredTabernacles"
           :key="tabernacle.id"
           class="tabernacle-div"
         >
@@ -49,6 +50,7 @@ export default {
 
   data() {
     return {
+      search_tabernacle:"",
       allTabernacle: [
         {
           id: 1,
@@ -118,6 +120,14 @@ export default {
       ],
     };
   },
+
+  computed:{
+    filteredTabernacles(){
+      return this.allTabernacle.filter((tabernacle)=>{
+        return tabernacle.name.match(this.search_tabernacle);
+      })
+    }
+  }
 };
 </script>
 
