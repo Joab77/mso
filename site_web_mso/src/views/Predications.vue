@@ -67,12 +67,19 @@
               height=""
             />
             <figcaption>
-              <p class="theme-share">
-                {{ predication.theme
-                }}<span class="share-icon"
+             <div class="bloc-preach-icon" >
+               <div class="theme-div theme-share">
+                  {{ predication.theme
+                }}
+               </div>
+              <div class="bloc-sharing">
+                <span class="preach-audio"><a href="">AUDIO</a></span>
+                <span class="preach-video text-danger"><a href="">PDF</a></span>
+                <span class="share-icon"
                   ><i class="fas fa-share-alt"></i
                 ></span>
-              </p>
+              </div>
+             </div>
               <p class="pastor-name">
                 Pasteur:<span>{{ predication.pasteur }}</span>
               </p>
@@ -300,6 +307,7 @@ export default {
   }
 }
 /* ******************************style for search block**************************************** */
+
 .search-predication-div {
   width: 80%;
   display: flex;
@@ -420,10 +428,26 @@ export default {
 }
 
 .predication-block img {
-  width: 90%;
+  width: 97%;
   height: 70%;
   position: relative;
   cursor: pointer;
+}
+
+.bloc-preach-icon{
+  /* border: 1px solid orange; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bloc-sharing{
+   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.bloc-sharing a{
+  color: inherit;
+  text-decoration: none;
 }
 
 .predication-section {
@@ -435,7 +459,7 @@ export default {
 }
 
 .predication-block figcaption {
-  width: 90%;
+  width: 97%;
   position: relative;
   margin: 0px auto;
   /* border: 1px solid green; */
@@ -463,6 +487,13 @@ export default {
   color: #6d6d6d;
   font-weight: bold;
   text-align: left !important;
+}
+
+.preach-video,.preach-audio{
+ cursor: pointer;
+ font-weight: bold;
+  padding: 0.2rem;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
 }
 
 .date-like-view {
@@ -493,7 +524,7 @@ export default {
 }
 .share-icon {
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.2rem;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
 }
 

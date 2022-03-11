@@ -38,30 +38,34 @@
         ><i class="fas fa-times"></i
       ></span>
       <ul id="menu">
-        <li class="sous-menu current-sous-menu">
-          <b-link href="/"><span>Accueil</span></b-link>
-        </li>
-        <li class="sous-menu">
-          <b-link href="/tabernacles"><span>Tabernacles</span></b-link>
-        </li>
-        <li class="sous-menu">
-          <b-link href="/predications"><span>Prédications</span></b-link>
-        </li>
-        <li class="sous-menu">
+        <div class="left-side">
+          <li class="sous-menu current-sous-menu">
+            <b-link href="/"><span>Accueil</span></b-link>
+          </li>
+          <li class="sous-menu">
+            <b-link href="/tabernacles"><span>Tabernacles</span></b-link>
+          </li>
+          <li class="sous-menu">
+            <b-link href="/predications"><span>Prédications</span></b-link>
+          </li>
+        </div>
+        <!-- <li class="sous-menu">
           <b-link href="/actualites"><span>Actualités</span></b-link>
-        </li>
-        <li class="sous-menu">
+        </li> -->
+        <!-- <li class="sous-menu">
           <b-link href="/galeries"><span>Images</span></b-link>
         </li>
         <li class="sous-menu">
           <b-link href="/forum"><span>Forum</span></b-link>
-        </li>
-        <li id="search-menu">
-          <input type="search" name="search" id="search" />
-          <span style="color: #ba700e; margin-right: 0.1rem"
-            ><i class="fas fa-search"></i
-          ></span>
-        </li>
+        </li> -->
+        <div class="right-side">
+          <li id="search-menu">
+            <input type="search" name="search" id="search" />
+            <span style="color: #ba700e; margin-right: 0.1rem"
+              ><i class="fas fa-search"></i
+            ></span>
+          </li>
+        </div>
       </ul>
     </nav>
   </div>
@@ -77,6 +81,11 @@ export default {
   methods: {
     displayMenu() {
       $("#general-menu").toggle();
+      // $("#bouton-bars").addClass('fas fa-times');
+      // $("#bouton-bars").removeClass('fas fa-bars');
+      // $("#general-menu").css("left","-300px");
+      // $('nav').css('transition','all 500ms ease-in-out');
+      // $('#bouton-bars').css('color','yellow');
     },
 
     hideMenu() {
@@ -119,7 +128,7 @@ export default {
     font-size: 25px;
   }
   .close-button {
-    display: block !important;
+    display: none !important;
     right: 0px;
     position: absolute;
   }
@@ -187,26 +196,29 @@ export default {
   nav {
     position: fixed !important;
     z-index: 999;
-    width: 80% !important;
+    width: 300px !important;
     height: 100vh !important;
     margin-left: 0px auto !important;
     padding: 0px !important;
     /* border: 1px solid green; */
     background: #250030;
-    transition: all 1s;
-    display: none;
+    transition: all 500ms ease-in-out;
+    /* display: ; */
+    /* left: -300px !important; */
   }
 
   #menu {
+    
     width: 100% !important;
     position: relative !important;
     height: 80% !important;
     flex-direction: column;
     /* border: 1px solid orangered; */
     text-align: left !important;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     padding: 0px;
   }
+
   .sous-menu span {
     text-align: center;
     /* border: 1px solid green; */
@@ -214,17 +226,41 @@ export default {
     margin-top: 25px !important;
     font-weight: 200;
   }
-  #menu li {
-    height: 50px !important;
+  #menu .left-side li {
+    height: 100px !important;
     position: relative !important;
     text-align: left !important;
-    /* border: 1px solid rgb(251, 255, 0); */
-    width: 100%;
+    /* border: 1px solid yellow; */
+    width: 100% !important;
     margin: 0px;
     padding: 0px;
-    flex: none;
+    flex: none !important;
   }
 
+  #menu li a {
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: relative;
+    text-decoration: none;
+    color: #e6e6e6;
+    font-size: 20px;
+    /* border: 1px solid lime; */
+  }
+
+  .left-side {
+    flex-direction: column;
+    height: 100%;
+    display: flex;
+    flex: none;
+    width: 100% !important;
+    /* border: 1px solid yellow; */
+  }
+
+  .right-side {
+    display: none;
+    /* border: 1px solid white; */
+  }
   #search-menu {
     display: none !important;
   }
@@ -234,7 +270,7 @@ export default {
   }
 }
 
-/* ***************************************************************************** */
+/* ****************************FIN RESPONSIVITE************************************************* */
 
 .bouton-bar,
 .close-button {
@@ -309,6 +345,19 @@ nav {
   align-items: center;
   /* border: 1px solid rgb(25, 0, 255); */
 }
+
+.left-side {
+  height: 100%;
+  display: flex;
+  flex: 1;
+  /* border: 1px solid yellow; */
+}
+
+.right-side {
+  height: 100%;
+  flex: 2;
+  /* border: 1px solid white; */
+}
 .sous-menu span {
   text-align: center;
   /* border: 1px solid green; */
@@ -316,7 +365,16 @@ nav {
   margin: 10px auto;
   font-weight: 200;
 }
-#menu li {
+#menu .left-side li {
+  height: 100%;
+  position: relative;
+  list-style-type: none;
+  flex: 1;
+  text-align: center;
+  /* border: 1px solid rgb(251, 255, 0); */
+}
+
+#menu .right-side li {
   height: 100%;
   position: relative;
   list-style-type: none;
@@ -332,7 +390,9 @@ nav {
 #menu li:nth-child(2n + 1) {
   background-color: #370047;
 }
-
+#menu .right-side li {
+  background-color: #46005b;
+}
 #menu li a {
   height: 100%;
   width: 100%;
@@ -352,15 +412,18 @@ nav {
   width: 100%;
   height: 100%;
   position: relative;
+  /* border: 1px solid yellow; */
   /* border-radius: 10px; */
 }
 #search-menu span {
   position: relative;
   font-size: 2rem;
   cursor: pointer;
+  width: 5%;
 }
 #search-menu input {
-  height: 80%;
+  width: 95%;
+  height: 100%;
   border: none;
   background-color: transparent;
   outline: none;
@@ -371,6 +434,7 @@ nav {
   border-top: 1px solid #f8a601;
   border-bottom: 1px solid #f8a601;
   border-left: 1px solid #f8a601;
-  border-radius: 15px;
+  text-align: center;
+  /* border-radius: 15px; */
 }
 </style>

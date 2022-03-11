@@ -18,60 +18,12 @@
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="4000">
             <img :src="images.image1" class="d-block" alt="" />
-            <div class="carousel-caption d-md-block">
+            <div class="carousel-caption d-md-block font-weight-bold">
               <h2>Pareil à l'aigle qui éveille sa couvée...</h2>
               <p>Deutéronome 32: 11</p>
             </div>
           </div>
-          <div class="carousel-item" data-bs-interval="4000">
-            <img
-              :src="images.image2"
-              class="d-block"
-              alt=""
-              style="object-fit: cover"
-            />
-            <div class="carousel-caption caption-bg d-md-block">
-              <h2>CONVENTION ANNUELLE 2019: L'église et sa Condition</h2>
-              <p>Mathieu 16:18-19</p>
-            </div>
-          </div>
-          <div class="carousel-item" data-bs-interval="4000">
-            <img
-              :src="images.image3"
-              class="d-block"
-              alt=""
-              style="object-fit: cover"
-            />
-            <div class="carousel-caption caption-bg d-md-block">
-              <h2>
-                CONVENTION ANNUELLE 2017 : Pourquoi est-ce que Dieu nous sauve ?
-              </h2>
-              <p>Luc 1:74-75</p>
-            </div>
-          </div>
-
-          <div class="carousel-item" data-bs-interval="4000">
-            <img
-              :src="images.image4"
-              class="d-block"
-              alt=""
-              style="object-fit: cover"
-            />
-            <div class="carousel-caption caption-bg d-md-block">
-              <h2>
-                CONVENTION ANNUELLE 2015 : Notre identité,une mission nouvelle
-              </h2>
-              <p>1 Jean 3:1-2</p>
-            </div>
-          </div>
-
-          <div class="carousel-item" data-bs-interval="4000">
-            <img :src="images.image5" class="d-block" alt="" />
-            <div class="carousel-caption caption-bg d-md-block">
-              <h2>VISION PENTECOTE 2019</h2>
-              <p>Deutéronome 32:11</p>
-            </div>
-          </div>
+          
         </div>
         <button
           class="carousel-control-prev"
@@ -91,41 +43,6 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
-
-        <div class="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="3"
-            aria-label="Slide 4"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="4"
-            aria-label="Slide 5"
-          ></button>
-        </div>
       </div>
 
       <div class="annonce">
@@ -291,41 +208,6 @@
       </div>
 
       <article class="atualites-verset">
-        <div class="actualite row">
-          <p style="color: #ba700e" class="font-weight-bold text-left mt-5">
-            QUELQUES ACTUALITES
-          </p>
-          <div class="bloc-actualite row">
-            <div class="col-md-3 sous-actualite">
-              <img src="../assets/img/images_actualites/image1.png" alt="" />
-              <figcaption>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                <span>Publié ce 25/11/2021</span>
-              </figcaption>
-            </div>
-            <div class="col-md-3 sous-actualite">
-              <img src="../assets/img/images_actualites/chorale.jpg" alt="" />
-              <figcaption>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                <span>Publié ce 25/11/2021</span>
-              </figcaption>
-            </div>
-            <div class="col-md-3 sous-actualite">
-              <img src="../assets/img/images_actualites/image3.png" alt="" />
-              <figcaption>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                <span>Publié ce 25/11/2021</span>
-              </figcaption>
-            </div>
-            <div class="col-md-3 sous-actualite">
-              <img src="../assets/img/images_actualites/image4.png" alt="" />
-              <figcaption>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                <span>Publié ce 25/11/2021</span>
-              </figcaption>
-            </div>
-          </div>
-        </div>
         <div class="versets">
           <div class="chapitre">
             <h3>Deutéronome 32:11</h3>
@@ -344,6 +226,7 @@
           </div>
         </div>
       </article>
+
     </div>
     <Footer></Footer>
   </div>
@@ -385,7 +268,7 @@ export default {
 .slides {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 500px;
   /* border: 1px solid orangered; */
   /* object-fit: cover; */
 }
@@ -401,16 +284,20 @@ export default {
 }
 .carousel-item img {
   width: 1550px;
-  height: 595px;
+  height: 500px;
   /* position: relative; */
   /* object-fit: contain; */
 }
 .caption-bg {
   background-color: rgba(0, 0, 0, 0.534);
 }
+.carousel-caption{
+  top: 40%;
+  position: absolute;
+}
 .carousel-caption h2 {
-  font-style: italic;
-  font-size: 25px;
+ font-weight: bold;
+  font-size: 50px;
 }
 .carousel-caption p {
   font-size: 25px;
@@ -455,7 +342,7 @@ export default {
   height: 600px;
   background-color: #f4f4f4;
   position: relative;
-  border: 1px solid lime;
+  /* border: 1px solid lime; */
 }
 
 .div-history-requete {
@@ -767,56 +654,56 @@ section {
 /* ***********************style for article************************************ */
 
 .atualites-verset {
-  margin: 0px;
-  height: 800px;
+  margin: 0px !important;
+  height: 400px;
   width: 100%;
   position: relative;
   background-color: #250030;
-  /*border: 1px solid greenyellow;*/
+  border: 1px solid #250030;
 }
 
 .actualite {
   /* margin-top: 50px; */
-  position: relative;
+  /* position: relative;
   width: 90%;
   margin: 0px auto;
   height: 500px;
-  text-align: center;
+  text-align: center; */
   /* border: 1px solid orangered; */
 }
 
 .bloc-actualite {
-  position: relative;
+  /* position: relative;
   width: 100%;
   height: 400px;
   margin: 0px auto;
   background-color: white;
   border-radius: 15px;
-  box-shadow: 0px 0px 5px 8px #370047;
+  box-shadow: 0px 0px 5px 8px #370047; */
 }
 .sous-actualite {
-  margin: 1rem 0rem;
-  cursor: pointer;
+  /* margin: 1rem 0rem;
+  cursor: pointer; */
   /* border: 1px solid greenyellow; */
 }
 .sous-actualite img {
-  width: 100%;
+  /* width: 100%;
   height: 70%;
   position: relative;
   object-fit: cover;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.562);
-  border-radius: 10px;
+  border-radius: 10px; */
 }
 
 .sous-actualite figcaption p {
-  margin: 1rem 0rem;
-  color: #707070;
+  /* margin: 1rem 0rem;
+  color: #707070; */
 }
 
 .sous-actualite figcaption span {
-  font-size: small;
+  /* font-size: small;
   color: #f8a601;
-  font-weight: bold;
+  font-weight: bold; */
 }
 
 /* *****************************STYLE FOR VERSETS***************************** */
@@ -824,17 +711,19 @@ section {
 .versets {
   z-index: 100;
   width: 90%;
-  height: 350px;
-  margin-bottom: 2rem;
+  height: 300px;
+  /* margin-bottom: 2rem; */
   /* border: 1px solid orangered; */
   background-color: white;
   position: relative;
   margin: 0px auto;
-  margin-top: 100px;
+  margin-top:100px;
+  /* margin-bottom: 0px !important; */
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  /* border: 2px solid red; */
 }
 
 .chapitre {
@@ -1004,7 +893,7 @@ section {
     width: 100%;
     margin-bottom: 2rem !important;
   }
-
+/* 
   .actualite {
     height: auto !important;
   }
@@ -1015,8 +904,8 @@ section {
   .sous-actualite {
     margin: 1rem 0rem;
     cursor: pointer;
-    /* border: 1px solid greenyellow; */
-  }
+    border: 1px solid greenyellow;
+  } */
 
   .versets {
     width: 90%;

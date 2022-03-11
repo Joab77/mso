@@ -49,6 +49,15 @@ createPopper(button, tooltip, {
   placement: 'right',
 });
 // ******************************************************************************
+
+// Import Vue and vue2-collapse
+import VueCollapse from 'vue2-collapse'
+// Loading the plugin into the Vue.
+Vue.use(VueCollapse)
+// ******************************************************************************
+
+
+
 Vue.config.productionTip = false
 new Vue({
   router,
